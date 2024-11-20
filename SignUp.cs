@@ -19,9 +19,9 @@ namespace SE_bank
         private void button2_Click(object sender, EventArgs e)
         {
 
-           if(textBox1.Text=="" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
             {
-                MessageBox.Show("Please Fill All Fields","Error",MessageBoxButtons.OK);
+                MessageBox.Show("Please Fill All Fields", "Error", MessageBoxButtons.OK);
             }
             else
             {
@@ -135,6 +135,13 @@ namespace SE_bank
             {
                 errorProvider1.Clear();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 loginForm= new Form1();
+            loginForm.Show();
         }
     }
 }

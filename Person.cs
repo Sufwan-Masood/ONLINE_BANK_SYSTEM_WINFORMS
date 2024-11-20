@@ -15,17 +15,19 @@ namespace SE_bank
         public string FirstName { get; protected set; }
         public string LastName { get; protected set; }
         public string Email { get; protected set; }
+        public string DOB { get; protected set; }
         public string Contact { get; protected set; }
         public string IBAN { get; protected set; }
         public string Password { get; protected set; } // Password for authentication
 
         // Constructor to initialize common properties
-        public Person(int id, string firstName, string lastName, string email, string contact, string iban, string password)
+        public Person(int id, string firstName, string lastName, string email, string dob,string contact, string iban, string password)
         {
             ID = id;
             FirstName = firstName;
             LastName = lastName;
             Email = email;
+            DOB = dob;
             Contact = contact;
             IBAN = iban;
             Password = password;

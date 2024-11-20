@@ -11,8 +11,8 @@ namespace SE_bank
     {
         private readonly DatabaseHelper dbHelper; // Aggregated DatabaseHelper
 
-        public Admin(int id, string firstName, string lastName, string email, string contact, string iban, string password, DatabaseHelper db)
-            : base(id, firstName, lastName, email, contact, iban, password)
+        public Admin(int id, string firstName, string lastName, string email,string dob, string contact, string iban, string password, DatabaseHelper db)
+            : base(id, firstName, lastName, email, dob,contact, iban, password)
         {
             dbHelper = db;
         }

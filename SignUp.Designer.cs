@@ -48,6 +48,7 @@
             button2 = new Button();
             label8 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            button1 = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -254,6 +255,18 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.DodgerBlue;
+            button1.Font = new Font("Bell MT", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button1.Location = new Point(931, 517);
+            button1.Name = "button1";
+            button1.Size = new Size(167, 52);
+            button1.TabIndex = 42;
+            button1.Text = "BACK";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // SignUp
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -261,6 +274,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1110, 581);
+            Controls.Add(button1);
             Controls.Add(label8);
             Controls.Add(tableLayoutPanel1);
             Name = "SignUp";
@@ -292,5 +306,6 @@
         private Label label8;
         private Button button2;
         private ErrorProvider errorProvider1;
+        private Button button1;
     }
 }

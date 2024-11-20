@@ -36,6 +36,7 @@
             label2 = new Label();
             dataGridView1 = new DataGridView();
             dataGridView2 = new DataGridView();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -116,6 +117,18 @@
             dataGridView2.Size = new Size(251, 285);
             dataGridView2.TabIndex = 47;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.DodgerBlue;
+            button2.Font = new Font("Bell MT", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button2.Location = new Point(931, 517);
+            button2.Name = "button2";
+            button2.Size = new Size(167, 52);
+            button2.TabIndex = 48;
+            button2.Text = "BACK";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Payments
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -123,6 +136,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1110, 581);
+            Controls.Add(button2);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
@@ -149,5 +163,6 @@
         private Label label2;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
+        private Button button2;
     }
 }

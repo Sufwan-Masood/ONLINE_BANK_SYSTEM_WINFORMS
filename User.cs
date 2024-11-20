@@ -14,8 +14,8 @@ namespace SE_bank
 
         //private readonly DatabaseHelper dbHelper;  // Aggregated DatabaseHelper
 
-        public User(int id, string firstName, string lastName, string email, string contact, string iban, string password, decimal balance, bool isAdmin/*, DatabaseHelper db*/)
-            : base(id, firstName, lastName, email, contact, iban, password)
+        public User(int id, string firstName, string lastName, string email, string DOB,string contact, string iban, string password, decimal balance, bool isAdmin/*, DatabaseHelper db*/)
+            : base(id, firstName, lastName, email,DOB, contact, iban, password)
         {
             Balance = balance;
             IsAdmin = isAdmin;
@@ -59,6 +59,7 @@ namespace SE_bank
                                                       (string)userRow["FirstName"],
                                                       (string)userRow["LastName"],
                                                       (string)userRow["Email"],
+                                                      (string)userRow["DOB"],
                                                       (string)userRow["Contact"],
                                                       (string)userRow["IBAN"],
                                                       (string)userRow["Password"],

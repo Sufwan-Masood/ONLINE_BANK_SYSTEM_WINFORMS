@@ -39,6 +39,7 @@
             textBox3 = new TextBox();
             label4 = new Label();
             pictureBox1 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -144,6 +145,18 @@
             pictureBox1.TabIndex = 29;
             pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.DodgerBlue;
+            button2.Font = new Font("Bell MT", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button2.Location = new Point(931, 517);
+            button2.Name = "button2";
+            button2.Size = new Size(167, 52);
+            button2.TabIndex = 42;
+            button2.Text = "BACK";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Add_Money
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -151,6 +164,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1110, 581);
+            Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
@@ -180,5 +194,6 @@
         private TextBox textBox3;
         private Label label4;
         private PictureBox pictureBox1;
+        private Button button2;
     }
 }

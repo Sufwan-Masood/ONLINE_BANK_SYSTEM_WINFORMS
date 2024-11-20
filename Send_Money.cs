@@ -23,6 +23,7 @@ namespace SE_bank
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "") // all fields are filled
             {
                 MessageBox.Show("Please Fill All Mandatory Fields", "Error", MessageBoxButtons.OK);
+                return;
             }
             if (!checkPassword(textBox3.Text)) // password authentication
             {
@@ -53,13 +54,14 @@ namespace SE_bank
                         // Adding transaction records;
 
                         //sender (withdraw transaction)
-                        Transaction transaction = new Transaction(new DatabaseHelper());
-                        transaction.CreateTransaction(SessionManager.CurrentUser.ID, decimal.Parse(textBox2.Text), "Withdrawal");
+                        Transaction transaction = new Transaction(new DatabaseHelper());                                          // recipient IBAN 
+                        transaction.CreateTransaction(SessionManager.CurrentUser.ID, decimal.Parse(textBox2.Text), "Withdrawal",  textBox1.Text);
 
                         //recipient (deposit transaction)
                         string query_get_recipientID = $"Select UserID from Users where IBAN = '{textBox1.Text}'";
                         int recipient_ID = (int)transaction.dbHelper.GetScalarValue(query_get_recipientID); //getting recipientID from DB
-                        transaction.CreateTransaction(recipient_ID, decimal.Parse(textBox2.Text), "Deposit");
+                                                                                                                //sender IBAN
+                        transaction.CreateTransaction(recipient_ID, decimal.Parse(textBox2.Text), "Deposit",    SessionManager.CurrentUser.IBAN);
 
                     }
                     else

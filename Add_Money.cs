@@ -19,7 +19,7 @@ namespace SE_bank
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text=="" || textBox2.Text == "" || textBox3.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
             {
                 MessageBox.Show("Please Fill All Mandatory Fields");
             }
@@ -30,6 +30,13 @@ namespace SE_bank
                 Console.WriteLine($"BALANCE IS {balance}");
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
         }
     }
 }

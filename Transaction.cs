@@ -15,6 +15,7 @@ namespace SE_bank
         public decimal Amount { get; private set; }
         public string TransactionType { get; private set; }
         public DateTime Date { get; private set; }
+        public string RecipientIBAN { get; private set; } // New Field
 
         public  DatabaseHelper dbHelper; // Aggregated DatabaseHelper
 
@@ -25,10 +26,10 @@ namespace SE_bank
         }
 
         // Method to create a new transaction (Insert into database)
-        public void CreateTransaction(int userId, decimal amount, string transactionType)
+        public void CreateTransaction(int userId, decimal amount, string transactionType, string recipientIban = null)
         {
-            string query = $"INSERT INTO Transactions (UserID, Amount, TransactionType) " +
-                           $"VALUES ({userId}, {amount}, '{transactionType}')";
+            string query = $"INSERT INTO Transactions (UserID, Amount, TransactionType, RecipientIBAN) " +
+                           $"VALUES ({userId}, {amount}, '{transactionType}', {(recipientIban == null ? "NULL" : $"'{recipientIban}'")})";
             dbHelper.ExecuteQuery(query);
         }
 
@@ -38,14 +39,19 @@ namespace SE_bank
             string query = $"SELECT * FROM Transactions WHERE UserID = {userId} ORDER BY Date DESC";
             return dbHelper.GetData(query);
         }
+        // Retrieve deposit history
         public DataTable GetDepositHistory(int userId)
         {
-            string query = $"SELECT * FROM Transactions WHERE UserID = {userId} AND TransactionType = 'Deposit' ORDER BY Date DESC";
+            string query = $"SELECT TransactionID, Amount, RecipientIBAN, Date " +
+                           $"FROM Transactions WHERE UserID = {userId} AND TransactionType = 'Deposit' ORDER BY Date DESC";
             return dbHelper.GetData(query);
         }
+
+        // Retrieve withdrawal history
         public DataTable GetWithdrawalHistory(int userId)
         {
-            string query = $"SELECT * FROM Transactions WHERE UserID = {userId} AND TransactionType = 'Withdrawal' ORDER BY Date DESC";
+            string query = $"SELECT TransactionID, Amount, RecipientIBAN, Date " +
+                           $"FROM Transactions WHERE UserID = {userId} AND TransactionType = 'Withdrawal' ORDER BY Date DESC";
             return dbHelper.GetData(query);
         }
 
