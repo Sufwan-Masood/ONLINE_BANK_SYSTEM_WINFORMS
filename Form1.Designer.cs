@@ -89,6 +89,7 @@
             button1.TabIndex = 4;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -100,6 +101,7 @@
             button2.TabIndex = 5;
             button2.Text = "Sign Up";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // pictureBox1
             // 

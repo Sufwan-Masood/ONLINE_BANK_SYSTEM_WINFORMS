@@ -1,6 +1,6 @@
 ﻿namespace SE_bank
 {
-    partial class Admin
+    partial class Admin_dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_dashboard));
             label5 = new Label();
             label3 = new Label();
             label2 = new Label();

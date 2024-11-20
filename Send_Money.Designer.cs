@@ -39,6 +39,7 @@
             textBox1 = new TextBox();
             button1 = new Button();
             label8 = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -131,6 +132,7 @@
             button1.TabIndex = 32;
             button1.Text = "CONFIRM TRANSACTION";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label8
             // 
@@ -143,6 +145,18 @@
             label8.TabIndex = 31;
             label8.Text = "SEND MONEY";
             // 
+            // button2
+            // 
+            button2.BackColor = Color.DodgerBlue;
+            button2.Font = new Font("Bell MT", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button2.Location = new Point(926, 502);
+            button2.Name = "button2";
+            button2.Size = new Size(167, 52);
+            button2.TabIndex = 41;
+            button2.Text = "BACK";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Send_Money
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -150,6 +164,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1110, 581);
+            Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
@@ -179,5 +194,6 @@
         private TextBox textBox1;
         private Button button1;
         private Label label8;
+        private Button button2;
     }
 }

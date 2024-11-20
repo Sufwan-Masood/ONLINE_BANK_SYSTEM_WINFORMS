@@ -16,5 +16,13 @@ namespace SE_bank
         {
             InitializeComponent();
         }
+
+        private void Payments_Load(object sender, EventArgs e)
+        {
+            Transaction transaction = new Transaction(new DatabaseHelper());
+            dataGridView1.DataSource = transaction.GetDepositHistory(SessionManager.CurrentUser.ID);
+            dataGridView2.DataSource = transaction.GetWithdrawalHistory(SessionManager.CurrentUser.ID);
+
+        }
     }
 }

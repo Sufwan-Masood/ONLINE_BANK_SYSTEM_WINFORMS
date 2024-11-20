@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             label3 = new Label();
             pictureBox1 = new PictureBox();
@@ -38,6 +39,7 @@
             button3 = new Button();
             button4 = new Button();
             label2 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -95,6 +97,7 @@
             button1.TabIndex = 21;
             button1.Text = "ADD MONEY";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -106,6 +109,7 @@
             button2.TabIndex = 22;
             button2.Text = "SEND MONEY";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -117,6 +121,7 @@
             button3.TabIndex = 23;
             button3.Text = "PAYMENTS";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -128,17 +133,23 @@
             button4.TabIndex = 24;
             button4.Text = "MY ACCOUNT";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Century Gothic", 16F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(922, 37);
+            label2.Location = new Point(843, 37);
             label2.Name = "label2";
             label2.Size = new Size(143, 38);
             label2.TabIndex = 25;
             label2.Text = "11:11:11";
+            // 
+            // timer1
+            // 
+            timer1.Interval = 10;
+            timer1.Tick += timer1_Tick;
             // 
             // Dashboard
             // 
@@ -158,6 +169,7 @@
             Controls.Add(pictureBox1);
             Name = "Dashboard";
             Text = "Dashboard";
+            Load += Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -174,5 +186,6 @@
         private Button button3;
         private Button button4;
         private Label label2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

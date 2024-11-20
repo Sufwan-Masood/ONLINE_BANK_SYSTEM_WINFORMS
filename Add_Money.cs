@@ -16,5 +16,20 @@ namespace SE_bank
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text=="" || textBox2.Text == "" || textBox3.Text == "")
+            {
+                MessageBox.Show("Please Fill All Mandatory Fields");
+            }
+            else
+            {
+                string query = $"Select Balance from Users where IBAN='{textBox1.Text}'";
+                decimal balance = (decimal)DatabaseHelper.DB_getBalance(query);
+                Console.WriteLine($"BALANCE IS {balance}");
+
+            }
+        }
     }
 }

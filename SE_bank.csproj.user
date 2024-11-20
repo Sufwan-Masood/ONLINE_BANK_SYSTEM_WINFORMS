@@ -4,7 +4,7 @@
     <Compile Update="Add_Money.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Admin.cs">
+    <Compile Update="Admin_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Dashboard.cs">

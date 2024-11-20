@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             label1 = new Label();
             label2 = new Label();
@@ -37,16 +38,18 @@
             label6 = new Label();
             label7 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
             textBox7 = new TextBox();
-            label8 = new Label();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             button2 = new Button();
+            label8 = new Label();
+            errorProvider1 = new ErrorProvider(components);
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -161,45 +164,14 @@
             tableLayoutPanel1.Size = new Size(542, 503);
             tableLayoutPanel1.TabIndex = 11;
             // 
-            // textBox1
+            // textBox7
             // 
-            textBox1.Location = new Point(274, 3);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Enter First Name here";
-            textBox1.Size = new Size(265, 31);
-            textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(274, 65);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Enter Last Name here";
-            textBox2.Size = new Size(265, 31);
-            textBox2.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(274, 127);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Enter Email here";
-            textBox3.Size = new Size(265, 31);
-            textBox3.TabIndex = 13;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(274, 189);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Enter Date here";
-            textBox4.Size = new Size(265, 31);
-            textBox4.TabIndex = 14;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(274, 251);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Enter Contact here";
-            textBox5.Size = new Size(265, 31);
-            textBox5.TabIndex = 15;
+            textBox7.Location = new Point(274, 375);
+            textBox7.Name = "textBox7";
+            textBox7.PlaceholderText = "Enter Password here";
+            textBox7.Size = new Size(265, 31);
+            textBox7.TabIndex = 17;
+            textBox7.Leave += textBox7_Leave;
             // 
             // textBox6
             // 
@@ -208,14 +180,64 @@
             textBox6.PlaceholderText = "Enter Password here";
             textBox6.Size = new Size(265, 31);
             textBox6.TabIndex = 16;
+            textBox6.Leave += textBox6_Leave;
             // 
-            // textBox7
+            // textBox5
             // 
-            textBox7.Location = new Point(274, 375);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = "Enter Password here";
-            textBox7.Size = new Size(265, 31);
-            textBox7.TabIndex = 17;
+            textBox5.Location = new Point(274, 251);
+            textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "Enter Contact here";
+            textBox5.Size = new Size(265, 31);
+            textBox5.TabIndex = 15;
+            textBox5.Leave += textBox5_Leave;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(274, 189);
+            textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "Enter Date here";
+            textBox4.Size = new Size(265, 31);
+            textBox4.TabIndex = 14;
+            textBox4.Leave += textBox4_Leave;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(274, 127);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "Enter Email here";
+            textBox3.Size = new Size(265, 31);
+            textBox3.TabIndex = 13;
+            textBox3.Leave += textBox3_Leave;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(274, 65);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Enter Last Name here";
+            textBox2.Size = new Size(265, 31);
+            textBox2.TabIndex = 12;
+            textBox2.Leave += textBox2_Leave;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(274, 3);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Enter First Name here";
+            textBox1.Size = new Size(265, 31);
+            textBox1.TabIndex = 11;
+            textBox1.Leave += textBox1_Leave;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.DodgerBlue;
+            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(274, 437);
+            button2.Name = "button2";
+            button2.Size = new Size(265, 63);
+            button2.TabIndex = 19;
+            button2.Text = "Sign Up";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label8
             // 
@@ -228,16 +250,9 @@
             label8.TabIndex = 18;
             label8.Text = "SIGN UP";
             // 
-            // button2
+            // errorProvider1
             // 
-            button2.BackColor = Color.DodgerBlue;
-            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(274, 437);
-            button2.Name = "button2";
-            button2.Size = new Size(265, 63);
-            button2.TabIndex = 19;
-            button2.Text = "Sign Up";
-            button2.UseVisualStyleBackColor = false;
+            errorProvider1.ContainerControl = this;
             // 
             // SignUp
             // 
@@ -252,6 +267,7 @@
             Text = "SignUp";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -275,5 +291,6 @@
         private TextBox textBox1;
         private Label label8;
         private Button button2;
+        private ErrorProvider errorProvider1;
     }
 }
