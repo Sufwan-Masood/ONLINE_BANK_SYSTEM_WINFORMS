@@ -121,5 +121,79 @@ namespace SE_bank
             base.DisplayInfo();
             Console.WriteLine($"Balance: {Balance}");
         }
+
+       public  bool addMoney(decimal amount)
+        {
+            if(amount < 0){
+                return false; //  cannot add -ve amount
+            }
+            else
+            {   string query = $"Update Users Set Balance = Balance + {amount} where IBAN = '{SessionManager.CurrentUser.IBAN}'";
+                DatabaseHelper.DB_update(query);
+                return true;
+            }
+        }
+        public string admin_getTotalBalance()
+        {
+            string query = $"select sum(Balance) from Users";
+            string balance = DatabaseHelper.DB_getBalance(query).ToString();
+            return balance;
+        }
+        public  string GetTotalDepositsCount()
+        {
+            string query = "SELECT COUNT(*) FROM Transactions WHERE TransactionType = 'Deposit'";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string GetTotalDepositsAmount()
+        {
+            string query = "SELECT SUM(Amount) FROM Transactions WHERE TransactionType = 'Deposit'";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string GetAvgDepositsAmount()
+        {
+            string query = "SELECT AVG(Amount) FROM Transactions WHERE TransactionType = 'Deposit'";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string GetTotalWithdrawsCount()
+        {
+            string query = "SELECT COUNT(*) FROM Transactions WHERE TransactionType = 'Withdrawal'";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string GetTotalWithdrawalAmount()
+        {
+            string query = "SELECT SUM(Amount) FROM Transactions WHERE TransactionType = 'Withdrawal'";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string GetAvgWithdrawalAmount()
+        {
+            string query = "SELECT AVG(Amount) FROM Transactions WHERE TransactionType = 'Withdrawal'";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string largestSingleTransaction()
+        {
+            string query = "SELECT MAX(Amount) FROM Transactions";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string getActiveAccounts()
+        {
+            string query = "SELECT COUNT(*) FROM Users WHERE Balance > 0";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string getAvgUserBalance()
+        {
+            string query = "SELECT AVG(Balance) FROM Users";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string mostFreqTransactionType()
+        {
+            string query = "SELECT TOP 1 TransactionType, COUNT(*) AS Count FROM Transactions GROUP BY TransactionType ORDER BY Count DESC";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0";
+        }
+        public string GetAverageTransactionAmount()
+        {
+            string query = "SELECT AVG(Amount) FROM Transactions";
+            return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0.00";
+        }
+
     }
 }

@@ -160,7 +160,7 @@
             button5.Name = "button5";
             button5.Size = new Size(167, 52);
             button5.TabIndex = 42;
-            button5.Text = "BACK";
+            button5.Text = "LOG OUT";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 

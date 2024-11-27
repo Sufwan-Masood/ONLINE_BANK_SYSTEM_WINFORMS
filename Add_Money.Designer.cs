@@ -71,11 +71,11 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("MS Reference Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(262, 219);
+            label1.Location = new Point(283, 219);
             label1.Name = "label1";
-            label1.Size = new Size(193, 28);
+            label1.Size = new Size(165, 28);
             label1.TabIndex = 24;
-            label1.Text = "IBAN NUMBER:";
+            label1.Text = "BANK NAME:";
             // 
             // textBox1
             // 
@@ -90,7 +90,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("MS Reference Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(329, 311);
+            label2.Location = new Point(319, 311);
             label2.Name = "label2";
             label2.Size = new Size(126, 28);
             label2.TabIndex = 26;
@@ -109,11 +109,11 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("MS Reference Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(247, 396);
+            label3.Location = new Point(286, 393);
             label3.Name = "label3";
-            label3.Size = new Size(208, 28);
+            label3.Size = new Size(160, 28);
             label3.TabIndex = 28;
-            label3.Text = "ENTER OTP PIN:";
+            label3.Text = "PASSWORD:";
             // 
             // textBox3
             // 

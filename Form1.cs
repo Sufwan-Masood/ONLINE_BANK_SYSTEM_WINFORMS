@@ -24,10 +24,22 @@ namespace SE_bank
 
                 if (User.Authenticate(textBox1.Text, textBox2.Text) == true)
                 {
-                    MessageBox.Show("Logged IN Successfully");
-                    this.Hide();
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.Show();
+                    if (SessionManager.CurrentUser.IsAdmin == true) // for admin panel
+                    {
+
+                        MessageBox.Show($"Logged IN Successfully as a Admin: {SessionManager.CurrentUser.FirstName} {SessionManager.CurrentUser.LastName}.", "Success", MessageBoxButtons.OK);
+                        this.Hide();
+                        Admin_dashboard admin_dash = new Admin_dashboard();
+                        admin_dash.Show();
+                    }
+                    else // for user dashboard
+                    {
+                        MessageBox.Show($"Logged IN Successfully as a User: {SessionManager.CurrentUser.FirstName} {SessionManager.CurrentUser.LastName}.", "Success", MessageBoxButtons.OK);
+                        this.Hide();
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Show();
+                    }
+
                 }
                 else
                 {
