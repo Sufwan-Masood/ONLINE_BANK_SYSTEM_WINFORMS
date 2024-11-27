@@ -40,6 +40,7 @@
             button4 = new Button();
             label2 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -151,6 +152,18 @@
             timer1.Interval = 10;
             timer1.Tick += timer1_Tick;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.DodgerBlue;
+            button5.Font = new Font("Bell MT", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button5.Location = new Point(910, 487);
+            button5.Name = "button5";
+            button5.Size = new Size(167, 52);
+            button5.TabIndex = 42;
+            button5.Text = "BACK";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -158,6 +171,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1110, 581);
+            Controls.Add(button5);
             Controls.Add(label2);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -187,5 +201,6 @@
         private Button button4;
         private Label label2;
         private System.Windows.Forms.Timer timer1;
+        private Button button5;
     }
 }

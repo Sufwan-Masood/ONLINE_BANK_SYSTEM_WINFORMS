@@ -56,5 +56,12 @@ namespace SE_bank
         {
             label2.Text = DateTime.Now.ToString("T");
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login_from = new Form1();
+            login_from.Show();
+        }
     }
 }

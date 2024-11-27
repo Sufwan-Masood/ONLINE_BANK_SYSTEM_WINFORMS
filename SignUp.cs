@@ -40,7 +40,7 @@ namespace SE_bank
                     }
                     else
                     {
-                        MessageBox.Show("Error");
+                        MessageBox.Show("Error"); // email error
                     }
                 }
             }

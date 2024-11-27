@@ -28,10 +28,12 @@ namespace SE_bank
             if (!checkPassword(textBox3.Text)) // password authentication
             {
                 MessageBox.Show("Please Enter Correct Password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             if (textBox1.Text == SessionManager.CurrentUser.IBAN) //Self transactions are not allowed
             {
                 MessageBox.Show("\nSelf transactions are not allowed, Please Enter other IBAN number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
             }
             else
             {
