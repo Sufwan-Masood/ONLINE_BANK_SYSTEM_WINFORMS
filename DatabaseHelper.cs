@@ -30,7 +30,17 @@ namespace SE_bank
         }
 
         // Retrieves data and returns it as a DataTable
-        public DataTable GetData(string query)
+        public  DataTable GetData(string query)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            connection.Close();
+            return dataTable;
+        }
+        public static DataTable getUserData(string query)
         {
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();

@@ -48,5 +48,12 @@ namespace SE_bank
             Form1 loginForm = new Form1();
             loginForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            User_Details user_DetailsForm = new User_Details();
+            user_DetailsForm.Show();
+        }
     }
 }

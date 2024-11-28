@@ -140,6 +140,7 @@
             button1.TabIndex = 57;
             button1.Text = "USER DETAILS";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 

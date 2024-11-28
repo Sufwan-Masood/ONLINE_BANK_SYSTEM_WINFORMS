@@ -195,5 +195,18 @@ namespace SE_bank
             return DatabaseHelper.DB_getBalance(query)?.ToString() ?? "0.00";
         }
 
+        // admin user details
+        public DataTable admin_getAllUsers()
+        {
+            string query = $"select * from Users";
+            DataTable all_users = DatabaseHelper.getUserData(query);
+            return all_users;
+
+        }
+        public string admin_getSpecificUserBalance(int id)
+        {
+            string query = $"Select Balance from Users where UserID = '{id}'";
+            return DatabaseHelper.DB_getBalance(query).ToString();
+        }
     }
 }
