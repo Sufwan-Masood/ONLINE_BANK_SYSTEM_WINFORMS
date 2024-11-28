@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
- // Sufwan is changing 
+ // Sufwan is not changing 
 namespace SE_bank
 {
     public class DatabaseHelper
